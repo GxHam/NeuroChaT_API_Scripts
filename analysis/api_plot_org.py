@@ -10,7 +10,7 @@ class GridFig:
 
     def __init__(
             self, rows, cols=4,
-            size_multiplier=5, wspace=0.3, hspace=0.3,
+            size_multiplier_x=5, size_multiplier_y=5, wspace=0.3, hspace=0.3,
             tight_layout=False):
         """
         Set up the grid specifications.
@@ -19,8 +19,8 @@ class GridFig:
 
         """
         self.fig = plt.figure(
-            figsize=(cols * size_multiplier,
-                     rows * size_multiplier),
+            figsize=(cols * size_multiplier_x,
+                     rows * size_multiplier_y),
             tight_layout=tight_layout)
         self.gs = gridspec.GridSpec(rows, cols, wspace=wspace, hspace=hspace)
         self.idx = 0
@@ -44,7 +44,7 @@ class GridFig:
         Names and saves figure.
 
         """
-        
+
         out_name = str(name) + ".png"
         print("Saved figure to {}".format(
             os.path.join(out_dir, out_name)))
