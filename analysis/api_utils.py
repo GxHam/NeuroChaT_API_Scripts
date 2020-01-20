@@ -137,3 +137,9 @@ def save_dicts_to_csv(filename, in_dicts):
 
     except Exception as e:
         log_exception(e, "When {} saving to csv".format(filename))
+
+
+def chunks(lst, n):
+    """Yield successive n-sized chunks from lst."""
+    for i in range(0, len(lst), n):
+        yield lst[i:i + n]
